@@ -17,7 +17,7 @@ const parsePage = (value: string) => {
 
 const PerPage = new GraphQLScalarType({
   name: 'PerPage',
-  description: 'Odd custom scalar type',
+  description: 'PerPage custom scalar type',
   parseValue: parsePage,
   serialize: parsePage,
   parseLiteral(ast) {
