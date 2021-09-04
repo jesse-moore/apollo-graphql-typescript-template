@@ -4,10 +4,10 @@
   "description": "Template for Typscript Apollo server",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"nodemon --exec ts-node src/index.ts\" \"npm:codegen-watch\"",
     "codegen": "graphql-codegen --config codegen.yml",
-    "codegen-watch": "graphql-codegen --config codegen.yml --watch"
+    "codegen-watch": "graphql-codegen --config codegen.yml --watch",
+    "test": "nyc --reporter=text mocha -r ts-node/register '__tests__/unit/**/*.test.ts'"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,8 @@
     "@types/chai": "^4.2.21",
     "@types/graphql-depth-limit": "^1.1.2",
     "@types/mocha": "^9.0.0",
+    "@types/sinon": "^10.0.2",
+    "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.30.0",
     "@typescript-eslint/parser": "^4.30.0",
     "chai": "^4.3.4",
@@ -48,7 +50,14 @@
     "nodemon": "^2.0.12",
     "nyc": "^15.1.0",
     "prettier": "^2.3.2",
+    "sinon": "^11.1.2",
+    "supertest": "^6.1.6",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
+  },
+  "nodemonConfig": {
+    "env": {
+      "NODE_ENV": "development"
+    }
   }
 }

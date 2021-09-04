@@ -12,6 +12,5 @@ export default gql`
     """
     helloWorld: String!
     integer(integer: PerPage!): Int!
-    odd(integer: Odd!): Int!
   }
 `;

@@ -2,4 +2,3 @@ build
 node_modules
 src/graphql/generated
 wallaby.config.js
-__tests__

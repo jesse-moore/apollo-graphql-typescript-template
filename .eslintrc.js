@@ -6,11 +6,21 @@ module.exports = {
     project: ['./tsconfig.eslint.json'],
   },
   plugins: ['@typescript-eslint'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'airbnb-base', 'airbnb-typescript/base'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-base',
+    'airbnb-typescript/base',
+  ],
   rules: {
     'no-console': ['warn', { allow: ['info', 'error'] }],
     quotes: ['error', 'single'],
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_', args: 'after-used' }],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_', args: 'after-used' },
+    ],
+    'no-unused-expressions': 'off',
+    '@typescript-eslint/no-unused-expressions': 0,
   },
 };
