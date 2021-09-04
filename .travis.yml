@@ -4,5 +4,5 @@ node_js:
 before_install:
   - npm install -g codecov
 script:
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - nyc --reporter=lcovonly mocha -r ts-node/register '__tests__/unit/**/*.test.ts'
   - codecov
