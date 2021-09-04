@@ -6,6 +6,7 @@ import config from '../../../src/config';
 
 let server: ApolloServer;
 beforeEach(async () => {
+  if (config.SERVER_PORT === undefined) throw new Error('Invalid port number');
   server = await apolloServer.startServer(schema, config.SERVER_PORT);
 });
 
