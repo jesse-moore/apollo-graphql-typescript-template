@@ -2,12 +2,10 @@ import { expect } from 'chai';
 import { ApolloServer, gql } from 'apollo-server';
 import apolloServer from '../../../src/apollo';
 import schema from '../../../src/graphql';
-import config from '../../../src/config';
 
 let server: ApolloServer;
 beforeEach(async () => {
-  if (config.SERVER_PORT === undefined) throw new Error('Invalid port number');
-  server = await apolloServer.startServer(schema, config.SERVER_PORT);
+  server = await apolloServer.startServer(schema, 4000);
 });
 
 describe('Query Resolvers', () => {
@@ -61,7 +59,7 @@ describe('Query Resolvers', () => {
         variables: { integer: 'h' },
       });
       if (res.errors === undefined) throw new Error('errors is undefined');
-      expect(res.errors[0]?.message).to.include('Provided value is not an integer');
+      expect(res.errors[0]?.message).to.include('h is not an integer');
       expect(res.data).to.be.undefined;
     });
   });
