@@ -8,8 +8,7 @@
     "codegen": "graphql-codegen --config codegen.yml",
     "codegen-watch": "graphql-codegen --config codegen.yml --watch",
     "test": "nyc --reporter=text mocha -r ts-node/register '__tests__/unit/**/*.test.ts'",
-    "test2": "nyc --reporter=lcovonly mocha -r ts-node/register '__tests__/unit/**/*.test.ts'",
-    "test3": "codecov"
+    "codecov": "nyc --reporter=lcovonly mocha -r ts-node/register '__tests__/unit/**/*.test.ts' && codecov"
   },
   "repository": {
     "type": "git",
