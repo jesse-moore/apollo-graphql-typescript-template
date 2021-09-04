@@ -22,5 +22,13 @@ module.exports = {
     ],
     'no-unused-expressions': 'off',
     '@typescript-eslint/no-unused-expressions': 0,
+    'object-curly-newline': [
+      'warn',
+      {
+        ObjectPattern: { multiline: true },
+        ImportDeclaration: 'never',
+        ExportDeclaration: { multiline: true, minProperties: 3 },
+      },
+    ],
   },
 };
